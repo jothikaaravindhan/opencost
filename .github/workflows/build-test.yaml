@@ -18,14 +18,14 @@ jobs:
   validate-protobuf:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: ./
       -
         name: Install Go
         uses: actions/setup-go@v5
         with:
-          go-version: 'stable'
+          go-version-file: 'go.mod'
 
       -
         name: Install protoc
@@ -60,7 +60,7 @@ jobs:
         name: Install Go
         uses: actions/setup-go@v5
         with:
-          go-version: 'stable'
+          go-version-file: 'go.mod'
 
       # Saves us from having to redownload all modules
       - name: Go Mod cache
